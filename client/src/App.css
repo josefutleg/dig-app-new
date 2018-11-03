@@ -1,0 +1,269 @@
+embed {
+  clip-path: inset(97px 0px 0px 0px);
+}
+
+.appLogoBox {
+  margin: auto;
+  background: black;
+  height: 100px;
+  width: 100px;
+  position: relative;
+}
+
+#footer {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  height: 80px;
+  width: 100%;
+  background: #999;
+}
+
+.formContainer {
+  clear: both;
+  width: 100%;
+  margin-top: 28px;
+  height: 30px;
+  /* background: white; */
+  position: fixed;
+}
+
+.hidden {
+  display: none;
+}
+
+.header {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  height: 81px;
+  width: 100%;
+  background: #999;
+}
+
+.pHeader {
+  position: fixed;
+  background: black;
+  height: 90px;
+  width: 280px;
+  padding: 10px;
+}
+
+.messageContainer {
+  margin-top: 100px;
+  clear: both;
+}
+
+.previewContainer {
+  transform: scale(50px, 100px);
+}
+
+.browseContainer, .searchContainer {
+  margin: 10%;
+  /* background: whitesmoke; */
+}
+
+.playlistContainer {
+  margin: auto;
+  overflow: scroll;
+  /* background-color: #999; */
+  height: 380px;  
+  width: 300px;
+}
+
+.playlist {
+  background-color: #999;
+  height: 380px;
+  margin: auto;
+  margin-top: 110px; 
+  width: 300px;
+}
+
+.resCont{
+  /* height: 30px; */
+  padding: 10px;
+  clear: both;
+  /* overflow: scroll; */
+  background: whitesmoke;
+}
+
+.resCont:nth-child(odd){
+  padding: 10px;
+  background: rgb(255, 255, 255);
+}
+
+.resCont:hover{
+  cursor: pointer;
+  background-color: rgb(178, 216, 252);
+}
+
+
+
+#add,
+#browse,
+#form,
+#play,
+#view {
+  float: right;
+}
+
+#appBlock {
+  float: left;
+  background: black;
+  width: 80px;
+  height: 81px;
+}
+
+#appName {
+  color: white;
+  float: left;
+  padding: 4px 18px;
+}
+
+#appNameCover {
+  color: white;
+  padding-top: 28px;
+}
+
+#artist, #tracks {
+  margin: 1px 0px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#center {
+  text-align: center;
+}
+
+#cover {
+  background: white;
+}
+
+#noUrl {
+  color: white;  
+  font-weight: bold;
+  margin-top: 26px;
+  /* padding-right: 12px; */
+  font-size: 14px;
+}
+
+#user {
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin: 0px;
+  padding-left: 10px;
+  padding-right: 12px;
+  font-size: 14px;
+}
+
+#title {
+  font-size: 12px;
+  margin: 1px 0;
+}
+
+#mongoResCont {
+  height: 30px;
+  overflow: scroll;  
+}
+
+#loader {
+  margin-top: 100px;
+  border: 8px solid #f3f3f3;
+  border-radius: 50%;
+  /* border-top: 4px solid rgb(184, 98, 98); */
+  border-top: 4px solid rgb(30, 215, 97);
+  border-right: 4px solid rgb(255, 255, 255);
+  border-bottom: 4px solid rgb(255, 255, 255);
+  border-left: 4px solid rgb(255, 255, 255);
+  width: 25px;
+  height: 25px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+#login {
+  margin-top: 10px;
+  padding: 10px 3px;
+  border-radius: 0px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  background-color: rgb(30, 215, 97);
+  outline: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+#add,
+#browse,
+#play,
+#submit,
+#view {
+  color: white;
+  font-weight: bold;
+  margin-left: 10px;
+  padding: 4px 7px;
+  border-radius: 0px;
+  border: none;
+  background-color: rgb(30, 215, 97);
+  outline: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+#add:hover,
+#browse:hover,
+#login:hover,
+#submit:hover,
+#play:hover,
+#view:hover {
+  background-color: lightgreen;
+  cursor: pointer;
+}
+
+#input {
+  padding: 4px 10px;
+  border: none;
+  outline: none;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px white inset;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.fade {
+  animation: fadeIn 5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  from {
+    opacity: 1;
+  }
+}
