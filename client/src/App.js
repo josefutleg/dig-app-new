@@ -639,7 +639,8 @@ class App extends Component {
           <div className="appLogoBox">
             <h1 id="appNameCover">dig</h1>
           </div>
-          <a href="http://localhost:8000/login">
+          {/* <a href="http://localhost:8000/login"> */}
+          <a href="https://u-dig.herokuapp.com/login">
             <button id="login">Sign Into Spotify</button>
           </a>
         </div>
