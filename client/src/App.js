@@ -231,7 +231,8 @@ class App extends Component {
     } else {
       let name = this.state.playlist_name;
       let tracks = this.state.sortedArr;
-      return fetch("http://localhost:8000/playlists", {
+      return fetch("https://u-dig.herokuapp.com/playlists", {
+        // return fetch("http://localhost:8000/playlists", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -269,7 +270,8 @@ class App extends Component {
     this.setState({ previewUrl: "" });
     document.querySelector(".searchContainer").innerHTML = "";
     document.querySelector(".messageContainer").innerHTML = "";
-    fetch("http://localhost:8000/playlists", {
+    fetch("https://u-dig.herokuapp.com/playlists", {    
+    // fetch("http://localhost:8000/playlists", {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -321,8 +323,8 @@ class App extends Component {
     document.querySelector(".browseContainer").innerHTML = "";
     let id = event.target.getAttribute("data-id");
     console.log(id);
-
-    fetch("http://localhost:8000/find", {
+    fetch("https://u-dig.herokuapp.com/find", {
+      // fetch("http://localhost:8000/find", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -460,10 +462,10 @@ class App extends Component {
       return a.key < b.key
         ? -1
         : a.key > b.key
-          ? 1
-          : a.tempo < b.tempo
-            ? -1
-            : 1;
+        ? 1
+        : a.tempo < b.tempo
+        ? -1
+        : 1;
     });
     this.setState({ sortedArr: sortedArr });
     let newArr = [];
