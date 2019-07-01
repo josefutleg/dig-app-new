@@ -10,7 +10,7 @@ var dotenv = require("dotenv").config();
 var app = express();
 var databaseUrl = process.env.MONGODB_URI || "mongodb://localhost:27017/dig_db";
 var collections = ["playlists"];
-var port = process.env.PORT || 8888;
+var port = process.env.PORT || 8000;
 var db = mongojs(databaseUrl, collections);
 
 db.on("error", function(error) {
@@ -21,7 +21,7 @@ app.use(express.static(path.join(__dirname, "client", "build")));
 
 var client_id = process.env.SPOTIFY_ID;
 var client_secret = process.env.SPOTIFY_SECRET;
-var redirect_uri = "http://localhost:8888/callback";
+var redirect_uri = "http://localhost:8000/callback";
 
 var generateRandomString = function(length) {
   var text = "";

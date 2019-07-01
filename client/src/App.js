@@ -231,7 +231,7 @@ class App extends Component {
     } else {
       let name = this.state.playlist_name;
       let tracks = this.state.sortedArr;
-      return fetch("http://localhost:8888/playlists", {
+      return fetch("http://localhost:8000/playlists", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -269,7 +269,7 @@ class App extends Component {
     this.setState({ previewUrl: "" });
     document.querySelector(".searchContainer").innerHTML = "";
     document.querySelector(".messageContainer").innerHTML = "";
-    fetch("http://localhost:8888/playlists", {
+    fetch("http://localhost:8000/playlists", {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -322,7 +322,7 @@ class App extends Component {
     let id = event.target.getAttribute("data-id");
     console.log(id);
 
-    fetch("http://localhost:8888/find", {
+    fetch("http://localhost:8000/find", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -639,7 +639,7 @@ class App extends Component {
           <div className="appLogoBox">
             <h1 id="appNameCover">dig</h1>
           </div>
-          <a href="http://localhost:8888/login">
+          <a href="http://localhost:8000/login">
             <button id="login">Sign Into Spotify</button>
           </a>
         </div>
