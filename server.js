@@ -19,7 +19,8 @@ db.on("error", function(error) {
 
 app.use(express.static(path.join(__dirname, "client", "build")));
 
-var client_id = process.env.SPOTIFY_ID;
+// var client_id = process.env.SPOTIFY_ID;
+var client_id = "60be7f5bdea34107a2403219fed4b659";
 var client_secret = process.env.SPOTIFY_SECRET;
 // var redirect_uri = "http://localhost:8000/callback";
 var redirect_uri = "https://u-dig.herokuapp.com/callback";
