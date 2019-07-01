@@ -652,9 +652,9 @@ class App extends Component {
             {this.state.previewUrl != "" && (
               <embed src={this.state.previewUrl} id="player" />
             )}
-            <button onClick={(this.check = event => console.log(this.state))}>
+            {/* <button onClick={(this.check = event => console.log(this.state))}>
               check
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

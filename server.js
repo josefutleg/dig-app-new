@@ -4,18 +4,23 @@ var cors = require("cors");
 var querystring = require("querystring");
 var cookieParser = require("cookie-parser");
 var bodyParser = require("body-parser");
-
+var path = require("path");
 var mongojs = require("mongojs");
-var databaseUrl = "dig_db";
+var dotenv = require("dotenv").config();
+var app = express();
+var databaseUrl = process.env.MONGODB_URI || "mongodb://localhost:27017/dig_db";
 var collections = ["playlists"];
+var port = process.env.PORT || 8888;
 var db = mongojs(databaseUrl, collections);
 
 db.on("error", function(error) {
   console.log("Database Error:", error);
 });
 
-var client_id = "60be7f5bdea34107a2403219fed4b659";
-var client_secret = "83436cfa086b47eba8ed014bdf08274b";
+app.use(express.static(path.join(__dirname, "client", "build")));
+
+var client_id = process.env.SPOTIFY_ID;
+var client_secret = process.env.SPOTIFY_SECRET;
 var redirect_uri = "http://localhost:8888/callback";
 
 var generateRandomString = function(length) {
@@ -31,7 +36,7 @@ var generateRandomString = function(length) {
 
 var stateKey = "spotify_auth_state";
 
-var app = express();
+// var app = express();
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -213,4 +218,7 @@ app.post("/find", function(req, res) {
 });
 
 console.log("Listening on 8888");
-app.listen(8888);
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
+app.listen(port);
