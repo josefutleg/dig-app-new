@@ -122,7 +122,6 @@ app.get("/callback", function(req, res) {
         request.get(options, function(error, response, body) {
           console.log(body);
         });
-
         // we can also pass the token to the browser to make requests from there
         res.redirect(
           "http://localhost:3000/#" +
@@ -217,8 +216,9 @@ app.post("/find", function(req, res) {
   );
 });
 
-console.log("Listening on 8888");
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 app.listen(port);
+console.log("Listening on " + port);
+
